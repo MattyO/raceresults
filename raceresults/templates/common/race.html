@@ -1,0 +1,14 @@
+<h2> {{ race.name }} </h2>
+
+{% regroup  race.results_set.all by finish_time as race_results  %}
+<table>
+  {% for result in race_results %}
+  <tr>
+    <td> {{forloop.counter}} </td>
+    <td> {{result.boat.name}}</td>
+    <td> {{result.finish_time}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+

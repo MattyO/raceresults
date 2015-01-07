@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1> {{race.name}} </h1>
+</h2> Start time: {{race.start_time| date}} </h2>
+<h2> Course: {{race.course}} </h2>
+<h2> Length: {{race.length}} </h2>
+<table>
+  {% for result in race.raceresult_set.all %}
+  <tr>
+    <td>
+      {{ result.boat.name }}
+    </td>
+    <td>
+      {{ result.finish_time}}
+    </td>
+    <td>
+      {{ result.corrected_finish_time  }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

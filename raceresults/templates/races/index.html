@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h1> Races </h1>
+
+  <table>
+  {% for race in races %}
+    <tr>
+      <td>
+        <a href="{% url 'single_race' race.id %}"> {{ race.name }} </a>
+      </td>
+      <td>
+        {{race.start_time.date.isoformat}}
+      </td>
+      <td>
+        {{race.course}}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

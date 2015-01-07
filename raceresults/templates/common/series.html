@@ -1,0 +1,5 @@
+<h1> {{series.name}} </h1>
+
+{% for race in series.races %}
+  {% block race %} {% endblock %}
+{% endfor %}
